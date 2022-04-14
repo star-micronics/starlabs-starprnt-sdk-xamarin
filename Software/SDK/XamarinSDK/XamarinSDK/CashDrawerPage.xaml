@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinSDK.CashDrawerPage"
+             NavigationPage.BackButtonTitle="">
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <ListView x:Name="listView" ItemsSource="{Binding}" ItemTapped="Handle_ItemTapped" CachingStrategy="RecycleElement" IsGroupingEnabled="True" HasUnevenRows="True">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Header}" Height="30" />
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="50">
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="17, 0">
+                                <Label Text="{Binding Text}" TextColor="{Binding TextColor}" />
+                                <Label Text="{Binding DetailText}" TextColor="{Binding DetailTextColor}" HorizontalOptions="EndAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <ContentView x:Name="blind" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" IsVisible="False">
+            <ContentView.BackgroundColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="iOS" Value="#68000000" />
+                    <On Platform="Android" Value="#98000000" />
+                    <On Platform="UWP" Value="#80000000" />
+                </OnPlatform>
+            </ContentView.BackgroundColor>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <ActivityIndicator Color="White" IsRunning="True" />
+            </StackLayout>
+        </ContentView>
+    </AbsoluteLayout>
+</ContentPage>

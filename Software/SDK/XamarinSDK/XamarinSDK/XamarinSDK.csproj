@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;Release_Mobile;Release_Windows</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\EnglishCouponImage.png" />
+    <None Remove="Resources\FrenchCouponImage.png" />
+    <None Remove="Resources\GermanCouponImage.png" />
+    <None Remove="Resources\JapaneseCouponImage.png" />
+    <None Remove="Resources\PortugueseCouponImage.png" />
+    <None Remove="Resources\RussianCouponImage.png" />
+    <None Remove="Resources\SimplifiedChineseCouponImage.png" />
+    <None Remove="Resources\SpanishCouponImage.png" />
+    <None Remove="Resources\SphereImage.png" />
+    <None Remove="Resources\StarLogoImage.png" />
+    <None Remove="Resources\TraditionalChineseCouponImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\EnglishCouponImage.png" />
+    <EmbeddedResource Include="Resources\FrenchCouponImage.png" />
+    <EmbeddedResource Include="Resources\GermanCouponImage.png" />
+    <EmbeddedResource Include="Resources\JapaneseCouponImage.png" />
+    <EmbeddedResource Include="Resources\PortugueseCouponImage.png" />
+    <EmbeddedResource Include="Resources\RussianCouponImage.png" />
+    <EmbeddedResource Include="Resources\SimplifiedChineseCouponImage.png" />
+    <EmbeddedResource Include="Resources\SpanishCouponImage.png" />
+    <EmbeddedResource Include="Resources\SphereImage.png" />
+    <EmbeddedResource Include="Resources\StarLogoImage.png" />
+    <EmbeddedResource Include="Resources\TraditionalChineseCouponImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.5.0.169047" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Communication\" />
+    <Folder Include="Functions\" />
+    <Folder Include="LocalizeReceipts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="StarIoWrapper">
+      <HintPath>..\..\libs\NetStandard\StarIoWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="StarIO_ClassLibrary">
+      <HintPath>..\..\libs\NetStandard\StarIO_ClassLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="StarIO_Extension_ClassLibrary">
+      <HintPath>..\..\libs\NetStandard\StarIO_Extension_ClassLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
